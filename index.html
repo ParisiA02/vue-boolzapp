@@ -11,7 +11,7 @@
 <body>
     <div class="background-header"></div>
     <main>
-        <div class="container">
+        <div id="app" class="container">
             <aside class="side-bar">
                 <div class="side-bar-header">
                     <div class="side-bar-header-left">
@@ -36,17 +36,56 @@
                     </span>
                 </div>
                 <div class="search-label">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Cerca o inizia una nuova chat">
                 </div>
                 <div class="chat-box">
-                    
+                    <div class="contact" v-for="contact, i in contacts" :key="i">
+                        <div class="avatar">
+                            <img class="avatar-img" :src="contacts[i].avatar" alt="avatar-utente">
+                        </div>
+                        <div class="text">
+                            <div class="username">
+                                {{contacts[i].name}}
+                            </div>
+                            <div class="last-message">
+                                {{contacts[i].messages[0].text}}
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </aside>
             <div class="main-conversation">
                 <div class="conversation-header">
+                    <div class="side-bar-header-left">
+                        <div class="avatar">
+                            <img class="avatar-img" src="img/avatar_1.jpg" alt="avatar-utente">
+                        </div>
+                        <div class="left-header-text">
+                            <span class="username">Michele</span>
+                            <span class="last-seen">Ultimo accesso oggi alle 10/01/2020 16:15:22</span>
+                        </div>
+                    </div>
+                    <div class="side-bar-header-right">
+                        <i class="fas fa-search"></i>
+                        <i class="fas fa-paperclip"></i>
+                        <i class="fas fa-ellipsis-v"></i>
+                    </div>
                 </div>
                 <div class="conversation-box">
+                    <div class="message recived">
+                        <span class="text">Messaggio inviato</span>
+                        <span class="date">10/01/2020 16:15:22</span>
+                    </div>    
+                    <div class="message sent">
+                        <span class="text">Messaggio inviato</span>
+                        <span class="date">10/01/2020 16:15:22</span>
+                    </div>       
                 </div>
                 <div class="conversation-typebox">
+                    <i class="far fa-smile"></i>
+                    <input type="text" placeholder="Scrivi un messaggio">
+                    <i class="fas fa-microphone"></i>
                 </div>
             </div>
         </div>

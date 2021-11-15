@@ -40,7 +40,7 @@ aside .side-bar-header{
     background-color: #EAEAEA;
 }
 
-aside .side-bar-header-left{
+.side-bar-header-left{
     width: 50%;
     height: 100%;
     margin-left: 20px;
@@ -48,7 +48,7 @@ aside .side-bar-header-left{
     align-items: center;
 }
 
-aside .side-bar-header .side-bar-header-left .avatar{
+.avatar{
     width: 70px;
     height: 70px;
 }
@@ -65,14 +65,14 @@ img.avatar-img{
     margin-left: 10px;
 }
 
-aside .side-bar-header-right{
+ .side-bar-header-right{
     width: 50%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
 
-aside .side-bar-header .side-bar-header-right i{
+.conversation-header i,.side-bar-header i{
     font-size: 30px;
     margin-right: 25px;
     color: #B1B1B1;
@@ -115,17 +115,42 @@ aside .message-notification .notification-text .notification-subtitle{
     color: grey;
 }
 
+/* styling search label */
 aside .search-label{
     width: 100%;
     height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
     /* debugging */
     background-color: #FAFAFA;
+}
+
+aside .search-label i{
+    color: grey;
+}
+
+aside .search-label input{
+    width: 90%;
+    border: none;
+    height: 30px;
+    text-decoration: none;
 }
 
 aside .chat-box{
     height: calc(100% - 275px);
     /* debugging */
     background-color: white;
+}
+
+.contact{
+    display: flex;
+    padding: 15px 0;
+}
+.last-message{
+    margin-left: 10px;
+    font-size: 15px;
+    color: #E2E3E4;
 }
 
 /* styling conversetion box */
@@ -138,17 +163,69 @@ aside .chat-box{
 .main-conversation .conversation-header{
     width: 100%;
     height: 100px;
-    /* debugging */
-    background-color: chartreuse;
+    display: flex;
+    background-color: #EAEAEA;
 }
+
+.last-seen{
+    display: block;
+    margin-left: 10px;
+}
+
 .main-conversation .conversation-box{
     width: 100%;
-    height: calc(100% - 200px);
-    /* debugging */
-    background-color: lavender;
+    height: calc(100% - 180px);
+    background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
+    
 }
 .main-conversation .conversation-typebox{
     width: 100%;
-    height: 100px;
-    background-color: lightskyblue;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #F3EEE9;
+}
+
+
+.main-conversation .conversation-typebox input{
+    display: block;
+    width: 80%;
+    height: 70%;
+}
+
+.main-conversation .conversation-typebox i{
+    font-size: 30px;
+    color: grey;
+    cursor: pointer;
+}
+
+.conversation-box{
+    display: flex;
+    flex-direction: column;
+}
+
+.message{
+    width: 200px;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 20px;
+    position: relative;
+}
+
+.recived{
+    background-color: white;
+    margin-left: 600px;
+}
+
+.sent{
+    background-color: #D5F9BA;
+    margin-left: 200px;
+}
+
+.date{
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    font-size: 10px;
 }
