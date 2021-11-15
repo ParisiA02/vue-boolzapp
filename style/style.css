@@ -1,0 +1,86 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #DCDBD2;
+}
+
+.background-header{
+    width: 100%;
+    height: 150px;
+    background-color: #029588;
+}
+
+main .container{
+    width: 80%;
+    height: calc(100vh - 150px);
+    margin: auto;
+    position: relative;
+    bottom: 75px;
+    display: flex;
+    /* debugging */
+    background-color: red;
+}
+
+/* styling side bar */
+aside.side-bar{
+    width: 400px;
+    height: 100%;
+    /* debugging */
+    background-color: blue;
+}
+
+aside .side-bar-header{
+    width: 100%;
+    height: 100px;
+    /* debugging */
+    background-color: chartreuse;
+}
+
+aside .message-notification{
+    width: 100%;
+    height: 125px;
+    /* debugging */
+    background-color: #8EDAFC;
+}
+
+aside .search-label{
+    width: 100%;
+    height: 50px;
+    /* debugging */
+    background-color: #FAFAFA;
+}
+
+aside .chat-box{
+    height: calc(100% - 275px);
+    /* debugging */
+    background-color: white;
+}
+
+/* styling conversetion box */
+.main-conversation{
+    width: calc(100% - 400px);
+    height: 100%;
+    /* debugging */
+    background-color: orangered;
+}
+.main-conversation .conversation-header{
+    width: 100%;
+    height: 100px;
+    /* debugging */
+    background-color: chartreuse;
+}
+.main-conversation .conversation-box{
+    width: 100%;
+    height: calc(100% - 200px);
+    /* debugging */
+    background-color: lavender;
+}
+.main-conversation .conversation-typebox{
+    width: 100%;
+    height: 100px;
+    background-color: lightskyblue;
+}
