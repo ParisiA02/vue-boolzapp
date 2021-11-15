@@ -6,6 +6,7 @@
 
 body{
     background-color: #DCDBD2;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .background-header{
@@ -27,23 +28,59 @@ main .container{
 
 /* styling side bar */
 aside.side-bar{
-    width: 400px;
+    width: 500px;
     height: 100%;
-    /* debugging */
-    background-color: blue;
 }
 
+/* styling side-bar header */
 aside .side-bar-header{
     width: 100%;
     height: 100px;
-    /* debugging */
-    background-color: chartreuse;
+    display: flex;
+    background-color: #EAEAEA;
 }
 
+aside .side-bar-header-left{
+    width: 50%;
+    height: 100%;
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+aside .side-bar-header .side-bar-header-left .avatar{
+    width: 70px;
+    height: 70px;
+}
+
+img.avatar-img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+    object-fit: cover;
+}
+.username{
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+aside .side-bar-header-right{
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+aside .side-bar-header .side-bar-header-right i{
+    font-size: 30px;
+    margin-right: 25px;
+    color: #B1B1B1;
+    cursor: pointer;
+}
 aside .message-notification{
     width: 100%;
     height: 125px;
-    /* debugging */
     background-color: #8EDAFC;
 }
 
@@ -62,7 +99,7 @@ aside .chat-box{
 
 /* styling conversetion box */
 .main-conversation{
-    width: calc(100% - 400px);
+    width: calc(100% - 500px);
     height: 100%;
     /* debugging */
     background-color: orangered;
