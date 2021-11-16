@@ -50,6 +50,7 @@ aside .side-bar-header{
 
 .avatar{
     width: 70px;
+    min-width: 70px;
     height: 70px;
 }
 
@@ -191,6 +192,7 @@ aside .chat-box{
     background-image: url("https://user-images.githubusercontent.com/15075759/28719144-86dc0f70-73b1-11e7-911d-60d70fcded21.png");
     display: flex;
     flex-direction: column;
+    overflow: auto;
 }
 
 .conversation-box .row-recived{
@@ -228,7 +230,8 @@ aside .chat-box{
 }
 
 .message{
-    width: 200px;
+    min-width: 200px;
+    max-width: 400px;
     padding: 20px;
     margin-top: 20px;
     border-radius: 20px;

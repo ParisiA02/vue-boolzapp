@@ -1,11 +1,12 @@
 var app = new Vue({
     el: "#app",
     data:{
+        newMessage:"",
         contacts:[
             {
                 name: "Michele",
                 avatar: "img/avatar_1.jpg",
-                active: false,
+                active: true,
                 messages: [
                     {
                         date:"10/01/2020 15:30:55",
@@ -49,7 +50,7 @@ var app = new Vue({
             {
                 name: "Samuele",
                 avatar: "img/avatar_3.jpg",
-                active: true,
+                active: false,
                 messages: [
                     {
                         date:"28/03/2020 10:20:40",
@@ -95,7 +96,18 @@ var app = new Vue({
         },
         addActive(i){
             this.contacts[i].active = true;
+        },
+        addMessage(i){
+            let date = new Date();
+            let nowDate = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+            this.contacts[i].messages.push({date:nowDate, text:this.newMessage, status:"sent"});
+            this.newMessage="";
+
+            setTimeout(()=>{
+                date = new Date();
+                nowDate = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+                this.contacts[i].messages.push({date:nowDate, text:"ok", status:"received"});
+            }, 1000);
         }
     }
 });
-   

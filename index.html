@@ -79,13 +79,13 @@
                             <div v-if="contacts[i].active === true && contacts[i].messages[k].status === 'sent'" class="row-sent">
                                 <div class="message sent">
                                     <span class="text">{{contacts[i].messages[k].text}}</span>
-                                    <span class="date">10/01/2020 16:15:22</span>
+                                    <span class="date">{{contacts[i].messages[k].date}}</span>
                                 </div>
                             </div>
                             <div v-if="contacts[i].active === true && contacts[i].messages[k].status === 'received'" class="row-recived">
                                 <div class="message received">
                                     <span class="text">{{contacts[i].messages[k].text}}</span>
-                                    <span class="date">10/01/2020 16:15:22</span>
+                                    <span class="date">{{contacts[i].messages[k].date}}</span>
                                 </div>
                             </div>  
                         </div>
@@ -93,9 +93,9 @@
 
 
                 </div>
-                <div class="conversation-typebox">
+                <div class="conversation-typebox" v-for="contact,i in contacts" v-if="contacts[i].active === true">
                     <i class="far fa-smile"></i>
-                    <input type="text" placeholder="Scrivi un messaggio">
+                    <input type="text" v-model="newMessage" placeholder="Scrivi un messaggio" @keydown.enter="addMessage(i)">
                     <i class="fas fa-microphone"></i>
                 </div>
             </div>
