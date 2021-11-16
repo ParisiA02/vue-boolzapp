@@ -143,6 +143,10 @@ aside .chat-box{
     background-color: white;
 }
 
+.chat-box .avatar{
+    margin-left: 20px;
+}
+
 .contact{
     display: flex;
     padding: 15px 0;
@@ -150,7 +154,7 @@ aside .chat-box{
 .last-message{
     margin-left: 10px;
     font-size: 15px;
-    color: #E2E3E4;
+    color: grey;
 }
 
 /* styling conversetion box */
@@ -170,6 +174,7 @@ aside .chat-box{
 .last-seen{
     display: block;
     margin-left: 10px;
+    color: grey;
 }
 
 .main-conversation .conversation-box{
@@ -215,12 +220,10 @@ aside .chat-box{
 
 .recived{
     background-color: white;
-    margin-left: 600px;
 }
 
 .sent{
     background-color: #D5F9BA;
-    margin-left: 200px;
 }
 
 .date{

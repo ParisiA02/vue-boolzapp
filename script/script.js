@@ -3,7 +3,7 @@ var app = new Vue({
     data:{
         contacts:[
             {
-                name: "Michele",
+                name: "Michele Causo",
                 avatar: "img/avatar_1.jpg",
                 messages: [
                     {
@@ -77,11 +77,6 @@ var app = new Vue({
                     {
                         date:"10/01/2020 15:50:00",
                         text:"Meglio cinema",
-                        status:"received"
-                    },
-                    {
-                        date:"28/03/2020 10:30:40",
-                        text:"Ah scusa!",
                         status:"received"
                     }
                 ]
