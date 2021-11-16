@@ -40,7 +40,7 @@
                     <input type="text" placeholder="Cerca o inizia una nuova chat">
                 </div>
                 <div class="chat-box">
-                    <div class="contact" v-for="contact, i in contacts" :key="i">
+                    <div class="contact" v-for="contact, i in contacts" :key="i" @click="removeActive(),addActive(i)">
                         <div class="avatar">
                             <img class="avatar-img" :src="contacts[i].avatar" alt="avatar-utente">
                         </div>
@@ -57,15 +57,15 @@
             </aside>
             <div class="main-conversation">
                 <div class="conversation-header">
-                    <div class="side-bar-header-left">
-                        <div class="avatar">
-                            <img class="avatar-img" src="img/avatar_1.jpg" alt="avatar-utente">
+                        <div class="side-bar-header-left" v-for="contact,i in contacts" :key="i" v-if="contacts[i].active === true">
+                            <div class="avatar">
+                                <img class="avatar-img" :src="contacts[i].avatar" alt="avatar-utente">
+                            </div>
+                            <div class="left-header-text">
+                                <span class="username">{{contacts[i].name}}</span>
+                                <span class="last-seen">Ultimo accesso oggi alle 10/01/2020 16:15:22</span>
+                            </div>
                         </div>
-                        <div class="left-header-text">
-                            <span class="username">Michele</span>
-                            <span class="last-seen">Ultimo accesso oggi alle 10/01/2020 16:15:22</span>
-                        </div>
-                    </div>
                     <div class="side-bar-header-right">
                         <i class="fas fa-search"></i>
                         <i class="fas fa-paperclip"></i>
@@ -73,14 +73,25 @@
                     </div>
                 </div>
                 <div class="conversation-box">
-                    <div class="message recived">
-                        <span class="text">Messaggio ricevuto</span>
-                        <span class="date">10/01/2020 16:15:22</span>
-                    </div>    
-                    <div class="message sent">
-                        <span class="text">Messaggio inviato</span>
-                        <span class="date">10/01/2020 16:15:22</span>
-                    </div>       
+
+                    <div v-for="contact,i in contacts" :key="i">
+                        <div v-for="message,k in contacts[i].messages" :key="k">                        
+                            <div v-if="contacts[i].active === true && contacts[i].messages[k].status === 'sent'" class="row-sent">
+                                <div class="message sent">
+                                    <span class="text">{{contacts[i].messages[k].text}}</span>
+                                    <span class="date">10/01/2020 16:15:22</span>
+                                </div>
+                            </div>
+                            <div v-if="contacts[i].active === true && contacts[i].messages[k].status === 'received'" class="row-recived">
+                                <div class="message received">
+                                    <span class="text">{{contacts[i].messages[k].text}}</span>
+                                    <span class="date">10/01/2020 16:15:22</span>
+                                </div>
+                            </div>  
+                        </div>
+                    </div>
+
+
                 </div>
                 <div class="conversation-typebox">
                     <i class="far fa-smile"></i>
