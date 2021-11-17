@@ -2,6 +2,7 @@ var app = new Vue({
     el: "#app",
     data:{
         newMessage:"",
+        search:"",
         contacts:[
             {
                 name: "Michele",
@@ -88,6 +89,13 @@ var app = new Vue({
             }
         ]
     },
+    computed:{
+        filteredList(){
+            return this.contacts.filter(contact => {
+                return contact.name.includes(this.search);
+            })
+        }
+    },
     methods:{
         removeActive(){
             for(let i=0; i < this.contacts.length; i++){
@@ -99,13 +107,13 @@ var app = new Vue({
         },
         addMessage(i){
             let date = new Date();
-            let nowDate = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+            let nowDate = date.getDay() + "/" + date.getMonth() + "/2021 " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
             this.contacts[i].messages.push({date:nowDate, text:this.newMessage, status:"sent"});
             this.newMessage="";
 
             setTimeout(()=>{
-                date = new Date();
-                nowDate = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
+                let date = new Date();
+                let nowDate = date.getDay() + "/" + date.getMonth() + "/2021 " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
                 this.contacts[i].messages.push({date:nowDate, text:"ok", status:"received"});
             }, 1000);
         }
