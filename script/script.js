@@ -116,6 +116,9 @@ var app = new Vue({
                 let nowDate = date.getDay() + "/" + date.getMonth() + "/2021 " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
                 this.contacts[i].messages.push({date:nowDate, text:"ok", status:"received"});
             }, 1000);
+        },
+        removeMessage(i,k){
+            this.contacts[i].messages.splice(k,1);
         }
     }
 });

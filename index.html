@@ -81,7 +81,7 @@
                                     <span class="text">{{contacts[i].messages[k].text}}</span>
                                     <i class="fas fa-angle-down down-arrow">
                                         <div class="delete-menu-container">
-                                            <span class="delete-menu">Elimina messaggio</span>
+                                            <span class="delete-menu" @click="removeMessage(i, k)">Elimina messaggio</span>
                                         </div>
                                     </i>
                                     <span class="date">{{contacts[i].messages[k].date}}</span>
@@ -92,7 +92,7 @@
                                     <span class="text">{{contacts[i].messages[k].text}}</span>
                                     <i class="fas fa-angle-down down-arrow">
                                         <div class="delete-menu-container">
-                                            <span class="delete-menu">Elimina messaggio</span>
+                                            <span class="delete-menu" @click="removeMessage(i, k)">Elimina messaggio</span>
                                         </div>
                                     </i>
                                     <span class="date">{{contacts[i].messages[k].date}}</span>
