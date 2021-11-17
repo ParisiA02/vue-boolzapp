@@ -92,7 +92,7 @@ var app = new Vue({
     computed:{
         filteredList(){
             return this.contacts.filter(contact => {
-                return contact.name.includes(this.search);
+                return contact.name.startsWith(this.search);
             })
         }
     },
