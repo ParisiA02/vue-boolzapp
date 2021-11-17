@@ -153,6 +153,7 @@ aside .chat-box{
     display: flex;
     padding: 15px 0;
     cursor: pointer;
+    position: relative;
 }
 
 .contact:hover{
@@ -163,6 +164,15 @@ aside .chat-box{
     margin-left: 10px;
     font-size: 15px;
     color: grey;
+}
+
+.last-message-date{
+    margin-left: 10px;
+    font-size: 15px;
+    color: grey;
+    position: absolute;
+    right: 5px;
+    top: 20px;
 }
 
 /* styling conversetion box */
