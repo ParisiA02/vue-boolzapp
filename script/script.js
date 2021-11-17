@@ -92,8 +92,8 @@ var app = new Vue({
     computed:{
         filteredList(){
             return this.contacts.filter(contact => {
-                return contact.name.startsWith(this.search);
-            })
+                return contact.name.toLowerCase().includes(this.search.toLowerCase());
+            });
         }
     },
     methods:{

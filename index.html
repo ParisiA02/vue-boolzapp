@@ -42,14 +42,14 @@
                 <div class="chat-box">
                     <div class="contact" v-for="contact, i in filteredList" :key="i" @click="removeActive(),addActive(i)"> 
                         <div class="avatar">
-                            <img class="avatar-img" :src="contacts[i].avatar" alt="avatar-utente">
+                            <img class="avatar-img" :src="filteredList[i].avatar" alt="avatar-utente">
                         </div>
                         <div class="text">
                             <div class="username">
-                                {{contacts[i].name}}
+                                {{filteredList[i].name}}
                             </div>
                             <div class="last-message">
-                                {{contacts[i].messages[contacts[i].messages.length - 1].text}} ...
+                                {{filteredList[i].messages[filteredList[i].messages.length - 1].text}} ...
                             </div>
                         </div>
                     </div>
@@ -79,12 +79,22 @@
                             <div v-if="contacts[i].active === true && contacts[i].messages[k].status === 'sent'" class="row-sent">
                                 <div class="message sent">
                                     <span class="text">{{contacts[i].messages[k].text}}</span>
+                                    <i class="fas fa-angle-down down-arrow">
+                                        <div class="delete-menu-container">
+                                            <span class="delete-menu">Elimina messaggio</span>
+                                        </div>
+                                    </i>
                                     <span class="date">{{contacts[i].messages[k].date}}</span>
                                 </div>
                             </div>
                             <div v-if="contacts[i].active === true && contacts[i].messages[k].status === 'received'" class="row-recived">
                                 <div class="message received">
                                     <span class="text">{{contacts[i].messages[k].text}}</span>
+                                    <i class="fas fa-angle-down down-arrow">
+                                        <div class="delete-menu-container">
+                                            <span class="delete-menu">Elimina messaggio</span>
+                                        </div>
+                                    </i>
                                     <span class="date">{{contacts[i].messages[k].date}}</span>
                                 </div>
                             </div>  
